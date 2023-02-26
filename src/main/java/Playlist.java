@@ -6,7 +6,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
-
+// Hier wordt de class Playlist aangemaakt met een aantal attributen en een scanner om een input te genereren waarmee een gebruiker iets kan invoeren.
 public class Playlist {
     public static int Aantalnummers;
     public static int Totaleplaylistduur;
@@ -16,7 +16,7 @@ public class Playlist {
 
     public Playlist() {
     }
-
+// Hier begint het programma
     public static void main(String[] args) {
         PrintPersonalia();
         GetAantalnummers();
@@ -25,11 +25,11 @@ public class Playlist {
         LangsteTrack();
         Alletracks();
     }
-
+// Met deze methode worden de persoonsgegevens getoond.
     static void PrintPersonalia() {
         System.out.println(" Voornaam: Abdel\n Achternaam: Fenich\n Studentennummer: 500503246 ");
     }
-
+// Met deze methode worden het aantal nummers opgevraagd.
     static int GetAantalnummers() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Voer het aantal nummers in");
@@ -47,7 +47,7 @@ public class Playlist {
 
         return Aantalnummers;
     }
-
+// Met deze methode kan de gebruiker een track invoeren.
     static void VoerTrackIn() {
         for(int i = 1; i <= Aantalnummers; ++i) {
             System.out.println("Voer hier track " + i + " in");
@@ -62,7 +62,7 @@ public class Playlist {
         }
 
     }
-
+//Deze methode laat zien welke track de langste is.
     static void LangsteTrack() {
         System.out.println(Collections.max(Speelduur));
         int Langestracknummer = Speelduur.indexOf(Collections.max(Speelduur));
@@ -70,11 +70,11 @@ public class Playlist {
         System.out.println("De naam van deze track is: " + (String)Track.get(Langestracknummer));
         System.out.println("De speelduur van deze track is: " + Speelduur.get(Langestracknummer) + " seconden");
     }
-
+// Deze methode toont alle tracks aan en voor elke track de speelduur
     static void Alletracks() {
         System.out.println("\nAlle tracks in de playlist worden hieronder getoond");
         PrintEenlijn();
-        System.out.printf("%-15s %15s %n", "Tracknaam", "Trackduur");
+        System.out.printf("%-15s %15s %n", "Speelduur", "Speelduur");
         PrintEenlijn();
 
         for(int i = 0; i < Aantalnummers; ++i) {
@@ -85,7 +85,7 @@ public class Playlist {
         PrintEenlijn();
         System.out.println("De totale duur van de playlist is: " + Totaleplaylistduur + " seconden");
     }
-
+// Deze methode maakt een tabel zodat de methode hierboven in een tabel staat wat er netter uitziet.
     public static void PrintEenlijn() {
         for(int a = 0; a <= 40; ++a) {
             System.out.print("-");
